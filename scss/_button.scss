@@ -1,0 +1,102 @@
+.btn {
+  border:1.5px solid;
+  border-color: transparent;
+  border-radius:3px;
+  min-width: 75px;
+  min-height: 40px ;
+  text-align:center;
+  padding:10px;
+  cursor:pointer;
+  transition: all 0.3s;
+  font-size: 1rem;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+
+.btn-primary {
+  @include btn-colors($btn-primary, $btn-primary-text ,$btn-primary);
+  &:hover {
+    @include btn-colors($btn-primary-hover, $btn-primary-text ,$btn-primary-hover);
+  }
+}
+
+.btn-outline-primary {
+  @include btn-colors(transparent, $btn-primary , $btn-primary);
+  &:hover {
+    @include btn-colors($btn-primary, $btn-primary-text ,$btn-primary);
+  }
+}
+
+.btn-danger {
+  @include btn-colors($btn-danger, $btn-danger-text ,$btn-danger);
+  &:hover {
+    @include btn-colors($btn-danger-hover, $btn-danger-text ,$btn-danger-hover);
+  }
+}
+
+.btn-outline-danger {
+  @include btn-colors(transparent, $btn-danger , $btn-danger);
+  &:hover {
+    @include btn-colors($btn-danger, $btn-danger-text ,$btn-danger);
+  }
+}
+
+.btn-warning {
+  @include btn-colors($btn-warning, $btn-warning-text ,$btn-warning);
+  &:hover {
+    @include btn-colors($btn-warning-hover, $btn-warning-text ,$btn-warning-hover);
+  }
+}
+
+.btn-outline-warning {
+  @include btn-colors(transparent, $btn-warning , $btn-warning);
+  &:hover {
+    @include btn-colors($btn-warning, $btn-warning-text ,$btn-warning);
+  }
+}
+
+.btn-success {
+  @include btn-colors($btn-success, $btn-success-text ,$btn-success);
+  &:hover {
+    @include btn-colors($btn-success-hover, $btn-success-text ,$btn-success-hover);
+  }
+}
+
+.btn-outline-success {
+  @include btn-colors(transparent, $btn-success , $btn-success);
+  &:hover {
+    @include btn-colors($btn-success, $btn-success-text ,$btn-success);
+  }
+}
+
+.btn-dark {
+  @include btn-colors($btn-dark, $btn-dark-text ,$btn-dark);
+  &:hover {
+    @include btn-colors($btn-dark-hover, $btn-dark-text ,$btn-dark-hover);
+  }
+}
+
+.btn-outline-dark {
+  @include btn-colors(transparent, $btn-dark , $btn-dark);
+  &:hover {
+    @include btn-colors($btn-dark, $btn-dark-text ,$btn-dark);
+  }
+}
+
+.btn-white {
+  @include btn-colors($btn-white, $btn-white-text ,$btn-white);
+  &:hover {
+    @include btn-colors($btn-white-hover, $btn-white-text ,$btn-white-hover);
+  }
+}
+
+.btn-outline-white {
+  @include btn-colors(transparent, $btn-white , $btn-white);
+  &:hover {
+    @include btn-colors($btn-white, $btn-white-text ,$btn-white);
+  }
+}
+
+
+

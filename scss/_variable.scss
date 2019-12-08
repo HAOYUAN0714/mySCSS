@@ -1,0 +1,54 @@
+$font-family-base: "Microsoft Jhenghei";
+
+// 全局顏色
+
+$color-primary : #132fac;
+$color-danger  : #d81b53;
+$color-warning : #c4990e;
+$color-success : #2da340;
+$color-dark    : #514848;
+$color-white   : #fff;
+
+
+// 按鈕顏色
+$btn-primary : #132fac;
+$btn-danger  : #d81b53;
+$btn-warning : #c4990e;
+$btn-success : #2da340;
+$btn-dark    : #514848;
+$btn-white   : #fff;
+
+
+// grid 變數
+$container: 1280px;
+$gutter-width : 30px;
+$gutter-num   : 12;
+
+// 實心按鈕hover顏色
+$btn-primary-hover : darken($btn-primary,10%);
+$btn-danger-hover  : darken($btn-danger,10%);
+$btn-warning-hover : darken($btn-warning,10%);
+$btn-success-hover : darken($btn-success,10%);
+$btn-dark-hover    : darken($btn-dark,10%);
+$btn-white-hover   : darken($btn-white,10%);
+
+// 按鈕文字顏色
+$btn-primary-text : #fff;
+$btn-danger-text  : #fff;
+$btn-warning-text : #000;
+$btn-success-text : #fff;
+$btn-dark-text    : #fff;
+$btn-white-text   : #000;
+
+// size
+
+$base-size : 16px;
+$sm-size   : $base-size * 0.75;
+$lg-size   : $base-size * 1.25;
+$xl-size   : $base-size * 1.5;
+$x2-size   : $base-size * 1.75;
+
+// margin、padding
+$margin-base: 10px;
+$padding-base: 10px
+

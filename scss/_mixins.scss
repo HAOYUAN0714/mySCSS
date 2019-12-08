@@ -1,0 +1,157 @@
+// 文字取代圖片
+@mixin text-hide {
+  text-indent: 110%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+// 按鈕設定 ，主要使用於 _button.scss
+
+@mixin btn-colors ($btn-color, $text-color,$border-color) { // 參數 1. 按鈕背景顏色 2. 按鈕文字顏色 3. border顏色
+  background-color: $btn-color !important;
+  color: $text-color !important;
+  border-color: $border-color !important;
+}
+
+// RWD
+@mixin pad-pro-down {
+  @media(max-width: 1023px) {
+    @content;
+  }
+}
+
+@mixin pad-pro-up {
+  @media(min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin pad-down {
+  @media(max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin pad-up {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin mobile-down {
+  @media(max-width: 575px) {
+    @content;
+  }
+}
+
+@mixin mobile-up {
+  @media(min-width: 576px) {
+    @content;
+  }
+}
+
+// margin
+
+@mixin margin ($base,$length){
+  margin: ($base*$length)*0.75;
+}
+
+@mixin mx ($base,$length){
+  margin-left: ($base*$length)*0.75;
+  margin-right: ($base*$length)*0.75;
+}
+
+@mixin my ($base,$length){
+  margin-top: ($base*$length)*0.75;
+  margin-bottom: ($base*$length)*0.75;
+}
+
+@mixin mt ($base,$length){
+  margin-top: ($base*$length)*0.75;
+}
+
+@mixin mb ($base,$length){
+  margin-bottom: ($base*$length)*0.75;
+}
+
+@mixin ml ($base,$length){
+  margin-left: ($base*$length)*0.75;
+}
+
+@mixin mr ($base,$length){
+  margin-right: ($base*$length)*0.75;
+}
+
+// padding
+
+@mixin padding ($base,$length){
+  padding: ($base*$length)*0.75;
+}
+
+@mixin px ($base,$length){
+  padding-left: ($base*$length)*0.75;
+  padding-right: ($base*$length)*0.75;
+}
+
+@mixin py ($base,$length){
+  padding-top: ($base*$length)*0.75;
+  padding-bottom: ($base*$length)*0.75;
+}
+
+@mixin pt ($base,$length){
+  padding-top: ($base*$length)*0.75;
+}
+
+@mixin pb ($base,$length){
+  padding-bottom: ($base*$length)*0.75;
+}
+
+@mixin pl ($base,$length){
+  padding-left: ($base*$length)*0.75;
+}
+
+@mixin pr ($base,$length){
+  padding-right: ($base*$length)*0.75;
+}
+
+// grid 前綴響應式 mixin
+
+@mixin col-set ($num) { // 各比例尺寸 ， 與 %col 一起使用
+  max-width: 100% * ($num / $gutter-num);
+  flex: 0 0 (100% * ($num / $gutter-num));
+}
+
+@mixin col-average { // col 使用
+  max-width: 100%;
+  min-height: 1px;
+  flex-grow: 1;
+  flex-basis: 0;
+  padding-left: $gutter-width / 2;
+  padding-right: $gutter-width / 2;
+}
+
+
+// 絕對定位於右上角的圓
+@mixin circle ($circle-color, $border-color, $text-color ,$circle-size) {
+  background-color: $circle-color;
+  border: 1px solid $border-color;
+  color: $text-color;
+  width: $circle-size;
+  height: $circle-size;
+  position: absolute;
+  top:-($circle-size/2);
+  right: -($circle-size/2);
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 50%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  @include mobile {
+    top:0px;
+    right: 0px;
+  };
+  &-title {
+    font-size: 18px;
+  }
+}

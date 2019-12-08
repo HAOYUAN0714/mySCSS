@@ -1,0 +1,104 @@
+// grid
+.container {
+  max-width: $container;
+  padding-right: $gutter-width / 2;
+  padding-left: $gutter-width / 2;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -($gutter-width/2);
+  margin-right: -($gutter-width/2);
+}
+
+
+.no-gutter {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+%col {
+  max-width: 100%;
+  min-height: 1px;
+  position: relative;
+  padding-left: $gutter-width / 2;
+  padding-right: $gutter-width / 2;
+  flex: 0 0 100%;
+}
+
+// grid 自動響應式 ，不與  grid 前綴響應式 共用
+// col 在手機此吋時自動變成 單欗顯示
+// @for $i from 1 to $gutter-num +1 {
+//   .col-#{ $i } {
+//     @extend %col;
+//   }
+// }
+
+// // 各col 寬度比例 設定
+
+// @media (min-width: 767px) {
+//   @for $i from 1 to $gutter-num +1 {
+//     .col-#{ $i } {
+//       max-width: 100% * ($i / $gutter-num);
+//       flex: 0 0 (100% * ($i / $gutter-num));
+//     }
+//   }
+// }
+
+// ------------------------------------------------------
+
+// grid 前綴響應式 ( 類 bootstrap 形式)
+
+// @for $i from 1 to $gutter-num + 1 {
+//   .col {
+//     &-#{ $i } {
+//       @include col-set ($i);
+//     }
+//     &-md-#{ $i } {
+//       @include pad-up {
+//         @include col-set ($i);
+//       }
+//       @extend %col;
+//     }
+//   }
+// }
+
+// col + col-md
+
+.col {
+  @include col-average;
+  &-md {
+    @extend %col;
+    @include pad-up {
+      @include col-average;
+    }
+  }
+}
+
+// col-i + col-md-i
+
+@media(min-width: 768px) {
+  @for $i from 1 to $gutter-num + 1 {
+    .col-md-#{ $i } { // 設定寬度以上
+      @include col-set ($i);
+    }
+  }
+}
+
+@for $i from 1 to $gutter-num + 1 {
+  .col {
+    &-#{ $i } {
+      @include col-set ($i);
+    }
+    &-md-#{ $i } { // 設定寬度以下
+      @extend %col;
+    }
+  }
+}
+
+// --------------------------------------------------
